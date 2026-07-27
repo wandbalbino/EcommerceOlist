@@ -1,0 +1,530 @@
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
+import { BarChart3, TrendingUp, MapPin, Package, Clock, Code, Lightbulb, CheckCircle } from "lucide-react";
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50">
+      {/* Header */}
+      <header className="sticky top-0 z-50 border-b border-slate-200/50 bg-white/80 backdrop-blur-md">
+        <div className="container mx-auto px-4 py-4 md:py-6">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 p-2">
+                <BarChart3 className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <h1 className="text-2xl font-bold text-slate-900">Análise Olist</h1>
+                <p className="text-sm text-slate-500">E-commerce Exploratório</p>
+              </div>
+            </div>
+            <Badge variant="outline" className="hidden md:flex">
+              Relatório 2025
+            </Badge>
+          </div>
+        </div>
+      </header>
+
+      <main className="container mx-auto px-4 py-12">
+        {/* Hero Section */}
+        <section className="mb-16 rounded-2xl bg-gradient-to-r from-blue-600 to-blue-700 p-8 md:p-12 text-white shadow-lg">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Análise Exploratória de Dados
+          </h2>
+          <p className="text-lg text-blue-100 mb-6 max-w-2xl">
+            Estudo abrangente do e-commerce Olist utilizando metodologia CRISP-DM, 
+            analisando distribuição geográfica, portfólio de produtos e performance logística.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <div className="bg-blue-500/30 rounded-lg p-4 backdrop-blur-sm">
+              <p className="text-sm text-blue-100">Período</p>
+              <p className="text-xl font-semibold">2016 - 2018</p>
+            </div>
+            <div className="bg-blue-500/30 rounded-lg p-4 backdrop-blur-sm">
+              <p className="text-sm text-blue-100">Pedidos Analisados</p>
+              <p className="text-xl font-semibold">100.000+</p>
+            </div>
+            <div className="bg-blue-500/30 rounded-lg p-4 backdrop-blur-sm">
+              <p className="text-sm text-blue-100">Estados</p>
+              <p className="text-xl font-semibold">Top 10</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Resumo Executivo */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-slate-900 mb-8">Resumo Executivo</h2>
+          <div className="grid gap-6 md:grid-cols-3">
+            <Card className="border-l-4 border-l-blue-600 hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <MapPin className="h-5 w-5 text-blue-600" />
+                  Distribuição Geográfica
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2">
+                <p className="text-sm text-slate-600">
+                  Forte concentração de vendedores na região Sudeste, com <strong className="text-blue-700">60.74%</strong> em São Paulo.
+                </p>
+                <Badge variant="secondary">Risco: Dependência Regional</Badge>
+              </CardContent>
+            </Card>
+
+            <Card className="border-l-4 border-l-green-600 hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Package className="h-5 w-5 text-green-600" />
+                  Portfólio de Produtos
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2">
+                <p className="text-sm text-slate-600">
+                  Top 3: Cama, Mesa e Banho, Beleza e Saúde, Esporte e Lazer.
+                </p>
+                <Badge variant="secondary">Oportunidade: Nichos Emergentes</Badge>
+              </CardContent>
+            </Card>
+
+            <Card className="border-l-4 border-l-amber-600 hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Clock className="h-5 w-5 text-amber-600" />
+                  Performance Logística
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2">
+                <p className="text-sm text-slate-600">
+                  Antecipação média de <strong className="text-amber-700">11.28 dias</strong> vs. prazo estimado.
+                </p>
+                <Badge variant="secondary">Diferencial: Competitivo</Badge>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Análises Detalhadas */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-slate-900 mb-8">Análises Detalhadas</h2>
+          
+          <Tabs defaultValue="metodologia" className="space-y-6">
+            <TabsList className="grid w-full grid-cols-4 lg:w-auto">
+              <TabsTrigger value="metodologia">Metodologia</TabsTrigger>
+              <TabsTrigger value="etapas">Etapas do Código</TabsTrigger>
+              <TabsTrigger value="insights">Insights</TabsTrigger>
+              <TabsTrigger value="recomendacoes">Recomendações</TabsTrigger>
+            </TabsList>
+
+            {/* Metodologia */}
+            <TabsContent value="metodologia" className="space-y-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Metodologia CRISP-DM</CardTitle>
+                  <CardDescription>
+                    Estrutura padrão para projetos de mineração de dados
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="space-y-4">
+                    <div className="flex gap-4">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-blue-600 font-bold flex-shrink-0">
+                        1
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-slate-900">Compreensão do Negócio</h4>
+                        <p className="text-sm text-slate-600 mt-1">
+                          Definição de três eixos principais: distribuição geográfica, categorias mais vendidas e performance logística.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-4">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-blue-600 font-bold flex-shrink-0">
+                        2
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-slate-900">Compreensão dos Dados</h4>
+                        <p className="text-sm text-slate-600 mt-1">
+                          Análise do dataset vendedores_geo com 100.000+ pedidos, examinando distribuição por estado e categorias de produtos.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-4">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-blue-600 font-bold flex-shrink-0">
+                        3
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-slate-900">Preparação dos Dados</h4>
+                        <p className="text-sm text-slate-600 mt-1">
+                          Remoção de duplicatas de CEP, tratamento de valores ausentes e limpeza de dados para análise.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-4">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-blue-600 font-bold flex-shrink-0">
+                        4
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-slate-900">Avaliação</h4>
+                        <p className="text-sm text-slate-600 mt-1">
+                          Interpretação de resultados com foco em padrões, concentrações e oportunidades de crescimento.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+
+            {/* Etapas do Código */}
+            <TabsContent value="etapas" className="space-y-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2"><Code className="h-5 w-5"/>Etapas de Processamento</CardTitle>
+                  <CardDescription>
+                    Explicação detalhada de cada fase do código Python
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="space-y-6">
+                    {/* Etapa 1: Importação de Bibliotecas */}
+                    <div className="border-l-4 border-blue-300 pl-4">
+                      <h4 className="font-semibold text-slate-900 mb-2">Etapa 1: Importação de Bibliotecas</h4>
+                      <p className="text-sm text-slate-600 mb-3">
+                        Carregamento das bibliotecas essenciais para análise de dados:
+                      </p>
+                      <div className="bg-slate-900 text-slate-100 p-4 rounded-lg font-mono text-xs overflow-x-auto">
+                        <pre>{`import os
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+import squarify
+import numpy as np
+
+plt.rcParams["font.family"] = "Segoe UI Emoji"`}</pre>
+                      </div>
+                      <p className="text-xs text-slate-500 mt-2">
+                        <strong>Pandas:</strong> manipulação de dados | <strong>Seaborn:</strong> visualizações estatísticas | <strong>Matplotlib:</strong> gráficos customizados
+                      </p>
+                    </div>
+
+                    {/* Etapa 2: Carregamento de Dados */}
+                    <div className="border-l-4 border-green-300 pl-4">
+                      <h4 className="font-semibold text-slate-900 mb-2">Etapa 2: Carregamento de Dados</h4>
+                      <p className="text-sm text-slate-600 mb-3">
+                        Leitura de 9 arquivos CSV em um dicionário de DataFrames, com verificação de existência da pasta:
+                      </p>
+                      <div className="bg-slate-900 text-slate-100 p-4 rounded-lg font-mono text-xs overflow-x-auto">
+                        <pre>{`pasta = r"../EcommerceOlist/olist"
+print("Pasta existe?", os.path.exists(pasta))
+
+files = {
+    "categories": "olist/product_category_name_translation.csv",
+    "customers": "olist/olist_customers_dataset.csv",
+    "sellers": "olist/olist_sellers_dataset.csv",
+    "order_items": "olist/olist_order_items_dataset.csv",
+    "products": "olist/olist_products_dataset.csv",
+    "orders": "olist/olist_orders_dataset.csv",
+    "payments": "olist/olist_order_payments_dataset.csv",
+    "geolocation": "olist/olist_geolocation_dataset.csv",
+    "reviews": "olist/olist_order_reviews_dataset.csv"
+}
+
+categories = pd.read_csv(files["categories"])
+customers = pd.read_csv(files["customers"])
+sellers = pd.read_csv(files["sellers"])
+order_items = pd.read_csv(files["order_items"])
+products = pd.read_csv(files["products"])
+orders = pd.read_csv(files["orders"])
+payments = pd.read_csv(files["payments"])
+geolocation = pd.read_csv(files["geolocation"])
+reviews = pd.read_csv(files["reviews"])
+
+print("Bases carregadas com sucesso!")`}</pre>
+                      </div>
+                      <p className="text-xs text-slate-500 mt-2">
+                        <strong>Resultado:</strong> 9 DataFrames carregados com sucesso, prontos para a análise.
+                      </p>
+                    </div>
+
+                    {/* Etapa 3: Análise de Vendedores por Estado */}
+                    <div className="border-l-4 border-amber-300 pl-4">
+                      <h4 className="font-semibold text-slate-900 mb-2">Etapa 3: Análise de Vendedores por Estado</h4>
+                      <p className="text-sm text-slate-600 mb-3">
+                        Contagem e ranking dos vendedores por unidade federativa, focando nos top 10 estados:
+                      </p>
+                      <div className="bg-slate-900 text-slate-100 p-4 rounded-lg font-mono text-xs overflow-x-auto">
+                        <pre>{`top_10_estados = sellers["seller_state"].value_counts().head(10)
+percentual = (top_10_estados / sellers["seller_state"].count() * 100).round(2)
+
+print("\nTop 10 estados com mais vendedores:")
+print(pd.DataFrame({"Estado": top_10_estados.index, "Qtd_Vendedores": top_10_estados.values, "Percentual": percentual.values}))
+
+# Placeholder para o gráfico de barras dos vendedores por estado
+<img src="/manus-storage/barplot_vendedores_b58be932.png" alt="Gráfico de barras dos top 10 estados com mais vendedores" className="w-full h-auto rounded-lg mt-4" />`}</pre>
+                      </div>
+                      <p className="text-xs text-slate-500 mt-2">
+                        <strong>Insight:</strong> SP lidera com <strong className="text-amber-700">60.74%</strong> (1.849 vendedores), evidenciando forte concentração regional.
+                      </p>
+                    </div>
+
+                    {/* Etapa 4: Análise de Categorias */}
+                    <div className="border-l-4 border-purple-300 pl-4">
+                      <h4 className="font-semibold text-slate-900 mb-2">Etapa 4: Análise de Categorias de Produtos</h4>
+                      <p className="text-sm text-slate-600 mb-3">
+                        Identificação das 10 categorias de produtos mais vendidas, após merge de datasets:
+                      </p>
+                      <div className="bg-slate-900 text-slate-100 p-4 rounded-lg font-mono text-xs overflow-x-auto">
+                        <pre>{`df_merged = pd.merge(order_items, products, on='product_id')
+df_merged = pd.merge(df_merged, categories, on='product_category_name')
+
+top_10_categorias = df_merged["product_category_name_english"].value_counts().head(10)
+
+print("\nTop 10 Categorias de Produtos Mais Vendidas:")
+print(top_10_categorias)
+
+<img src="/manus-storage/treemap_categorias_7384089d.png" alt="Treemap das top 10 categorias de produtos mais vendidas" className="w-full h-auto rounded-lg mt-4" />`}</pre>
+                      </div>
+                      <p className="text-xs text-slate-500 mt-2">
+                        <strong>Insight:</strong> Categorias como Cama, Mesa e Banho, Beleza e Saúde, e Esporte e Lazer dominam o marketplace.
+                      </p>
+                    </div>
+
+                    {/* Etapa 5: Análise de Performance Logística */}
+                    <div className="border-l-4 border-red-300 pl-4">
+                      <h4 className="font-semibold text-slate-900 mb-2">Etapa 5: Análise de Performance Logística</h4>
+                      <p className="text-sm text-slate-600 mb-3">
+                        Cálculo da diferença entre tempo real e estimado de entrega, e análise de atrasos:
+                      </p>
+                      <div className="bg-slate-900 text-slate-100 p-4 rounded-lg font-mono text-xs overflow-x-auto">
+                        <pre>{`df_entregas_geral = orders.dropna(subset=["order_purchase_timestamp","order_estimated_delivery_date","order_delivered_customer_date"]).copy()
+df_entregas_geral["tempo_real_entrega"] = (df_entregas_geral["order_delivered_customer_date"] - df_entregas_geral["order_purchase_timestamp"]).dt.days
+df_entregas_geral["tempo_estimado_entrega"] = (df_entregas_geral["order_estimated_delivery_date"] - df_entregas_geral["order_purchase_timestamp"]).dt.days
+df_entregas_geral["atraso"] = df_entregas_geral["tempo_real_entrega"] - df_entregas_geral["tempo_estimado_entrega"]
+
+print("\n===== VALIDAÇÃO GERAL — TEMPOS DE ENTREGA =====")
+print(f"Média do atraso (dias): {df_entregas_geral["atraso"].mean():.2f}")
+
+<img src="/manus-storage/histplot_atraso_bb8851dd.png" alt="Histograma da distribuição do atraso de entrega" className="w-full h-auto rounded-lg mt-4" />
+<img src="/manus-storage/boxplot_atraso_da414f04.png" alt="Boxplot da distribuição do atraso de entrega" className="w-full h-auto rounded-lg mt-4" />`}</pre>
+                      </div>
+                      <p className="text-xs text-slate-500 mt-2">
+                        <strong>Insight:</strong> Média de antecipação de <strong className="text-red-700">11.28 dias</strong>, indicando alta eficiência operacional.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+
+            {/* Insights */}
+            <TabsContent value="insights" className="space-y-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2"><Lightbulb className="h-5 w-5"/>Principais Insights</CardTitle>
+                  <CardDescription>
+                    Descobertas e padrões identificados na análise
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="rounded-lg bg-blue-50 p-4 border border-blue-200">
+                      <div className="flex items-start gap-3">
+                        <TrendingUp className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
+                        <div>
+                          <h4 className="font-semibold text-slate-900">Concentração Regional</h4>
+                          <p className="text-sm text-slate-600 mt-1">
+                            São Paulo concentra <strong className="text-blue-700">60.74%</strong> dos vendedores, seguido por Paraná (<strong className="text-blue-700">11.47%</strong>) e Minas Gerais (<strong className="text-blue-700">8.02%</strong>). 
+                            Regiões Norte e Centro-Oeste têm representatividade mínima, sugerindo risco de dependência regional.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="rounded-lg bg-green-50 p-4 border border-green-200">
+                      <div className="flex items-start gap-3">
+                        <Package className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
+                        <div>
+                          <h4 className="font-semibold text-slate-900">Portfólio Diversificado</h4>
+                          <p className="text-sm text-slate-600 mt-1">
+                            Categorias utilitárias como Cama, Mesa e Banho, Beleza e Saúde, e Esporte e Lazer dominam as vendas. 
+                            Há oportunidades em nichos especializados e categorias emergentes para otimização do portfólio.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="rounded-lg bg-amber-50 p-4 border border-amber-200">
+                      <div className="flex items-start gap-3">
+                        <Clock className="h-5 w-5 text-amber-600 mt-1 flex-shrink-0" />
+                        <div>
+                          <h4 className="font-semibold text-slate-900">Eficiência Logística Excepcional</h4>
+                          <p className="text-sm text-slate-600 mt-1">
+                            Entregas chegam em média <strong className="text-amber-700">11.28 dias</strong> antes do prazo estimado, 
+                            configurando-se como um diferencial competitivo significativo para a Olist.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="rounded-lg bg-purple-50 p-4 border border-purple-200">
+                      <div className="flex items-start gap-3">
+                        <BarChart3 className="h-5 w-5 text-purple-600 mt-1 flex-shrink-0" />
+                        <div>
+                          <h4 className="font-semibold text-slate-900">Qualidade e Abrangência dos Dados</h4>
+                          <p className="text-sm text-slate-600 mt-1">
+                            O dataset da Olist, com mais de <strong className="text-purple-700">100.000</strong> registros de pedidos entre 2016 e 2018, 
+                            permitiu análises robustas e a identificação de padrões claros de comportamento.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+
+            {/* Recomendações */}
+            <TabsContent value="recomendacoes" className="space-y-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2"><CheckCircle className="h-5 w-5"/>Recomendações Estratégicas</CardTitle>
+                  <CardDescription>
+                    Ações recomendadas baseadas nos insights da análise
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="space-y-6">
+                    <div className="rounded-lg border border-slate-200 p-4">
+                      <h4 className="font-semibold text-slate-900 mb-3">1. Expansão Geográfica do Marketplace</h4>
+                      <p className="text-sm text-slate-600 mb-3">
+                        <strong>Objetivo:</strong> Reduzir dependência regional e aumentar cobertura nacional.
+                      </p>
+                      <ul className="space-y-2 text-sm text-slate-600">
+                        <li className="flex gap-2">
+                          <span className="text-blue-600">•</span>
+                          <span>Criar programas de incentivos financeiros para novos vendedores em estados sub-representados.</span>
+                        </li>
+                        <li className="flex gap-2">
+                          <span className="text-blue-600">•</span>
+                          <span>Parcerias com associações empresariais regionais (Norte, Centro-Oeste).</span>
+                        </li>
+                        <li className="flex gap-2">
+                          <span className="text-blue-600">•</span>
+                          <span>Campanhas segmentadas por faixa de CEP com metas trimestrais.</span>
+                        </li>
+                      </ul>
+                      <p className="text-xs text-slate-500 mt-3">
+                        <strong>KPIs Sugeridos:</strong> Crescimento percentual de vendedores por estado | Índice Herfindahl-Hirschman | SLA logístico médio por região.
+                      </p>
+                    </div>
+
+                    <div className="rounded-lg border border-slate-200 p-4">
+                      <h4 className="font-semibold text-slate-900 mb-3">2. Otimização de Categorias e Competitividade</h4>
+                      <p className="text-sm text-slate-600 mb-3">
+                        <strong>Objetivo:</strong> Melhorar equilíbrio competitivo e aumentar receita por categoria.
+                      </p>
+                      <ul className="space-y-2 text-sm text-slate-600">
+                        <li className="flex gap-2">
+                          <span className="text-green-600">•</span>
+                          <span>Reposicionar incentivos por categoria com taxas reduzidas para nichos estratégicos.</span>
+                        </li>
+                        <li className="flex gap-2">
+                          <span className="text-green-600">•</span>
+                          <span>Identificar "blue oceans" (espaços de mercado pouco competitivos com demanda crescente).</span>
+                        </li>
+                        <li className="flex gap-2">
+                          <span className="text-green-600">•</span>
+                          <span>Benchmarking interno entre categorias para otimizar mix de produtos.</span>
+                        </li>
+                      </ul>
+                      <p className="text-xs text-slate-500 mt-3">
+                        <strong>KPIs Sugeridos:</strong> Receita média por categoria | Taxa de crescimento por segmento | Índice de concentração.
+                      </p>
+                    </div>
+
+                    <div className="rounded-lg border border-slate-200 p-4">
+                      <h4 className="font-semibold text-slate-900 mb-3">3. Capitalizar Performance Logística</h4>
+                      <p className="text-sm text-slate-600 mb-3">
+                        <strong>Objetivo:</strong> Transformar eficiência em diferencial de marketing.
+                      </p>
+                      <ul className="space-y-2 text-sm text-slate-600">
+                        <li className="flex gap-2">
+                          <span className="text-amber-600">•</span>
+                          <span>Comunicar antecipação de <strong className="text-amber-700">11.28 dias</strong> em campanhas de marketing.</span>
+                        </li>
+                        <li className="flex gap-2">
+                          <span className="text-amber-600">•</span>
+                          <span>Aprimorar acurácia de estimativas para casos de exceção (outliers).</span>
+                        </li>
+                        <li className="flex gap-2">
+                          <span className="text-amber-600">•</span>
+                          <span>Monitorar SLA por região para manter consistência operacional.</span>
+                        </li>
+                      </ul>
+                      <p className="text-xs text-slate-500 mt-3">
+                        <strong>KPIs Sugeridos:</strong> Tempo médio de entrega | Taxa de antecipação | Satisfação do cliente.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+          </Tabs>
+        </section>
+
+        {/* Conclusões */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-slate-900 mb-8">Conclusões</h2>
+          <Card className="bg-gradient-to-br from-slate-50 to-slate-100 border-slate-200 shadow-md">
+            <CardContent className="pt-6 space-y-4">
+              <p className="text-slate-700">
+                A análise exploratória de dados do e-commerce Olist revelou três dimensões estratégicas críticas:
+              </p>
+              <ul className="space-y-3 text-slate-700">
+                <li className="flex gap-3">
+                  <span className="text-blue-600 font-bold">1.</span>
+                  <span>
+                    <strong>Distribuição Geográfica:</strong> Concentração extrema em São Paulo (<strong className="text-blue-700">60.74%</strong>) representa 
+                    risco estratégico. Recomenda-se expansão agressiva em regiões emergentes com incentivos direcionados.
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-green-600 font-bold">2.</span>
+                  <span>
+                    <strong>Portfólio de Produtos:</strong> Categorias utilitárias dominam, mas há oportunidades em nichos 
+                    especializados. Estratégia de reposicionamento de incentivos pode otimizar receita.
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-amber-600 font-bold">3.</span>
+                  <span>
+                    <strong>Performance Logística:</strong> Antecipação média de <strong className="text-amber-700">11.28 dias</strong> é diferencial competitivo 
+                    significativo. Deve ser capitalizado em comunicação de marca e estratégia de retenção.
+                  </span>
+                </li>
+              </ul>
+              <p className="text-slate-700 pt-4 border-t border-slate-300">
+                A implementação das recomendações estratégicas posicionará o Olist para crescimento sustentável, 
+                mitigação de riscos regionais e consolidação de sua liderança em eficiência logística.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Footer */}
+        <footer className="border-t border-slate-200 pt-8 pb-12 text-center text-sm text-slate-600">
+          <p>
+            Relatório gerado com Python (Pandas, Seaborn, Matplotlib) | 
+            Metodologia: CRISP-DM | Dataset: Olist (Kaggle)
+          </p>
+          <p className="mt-2">
+            Trabalho de Avaliação Final - Ciência de Dados | Estácio de Sá | 2025
+          </p>
+        </footer>
+      </main>
+    </div>
+  );
+}
